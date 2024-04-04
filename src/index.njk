@@ -1,13 +1,27 @@
 
 {% extends '_templates/base.njk' %}
+
 {% block page_title %}Capt. McGillicutty's Ship's Log{% endblock %}
+
+{% block page_description %}An intro and a list of blogs.{% endblock %}
+
 {% block content %}
+
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col col-sm-5 col-md-4 col-lg-4">
      <h1>A pirate's life is for me</h1>
       <p>Hempen halter mizzenmast deadlights gaff pillage starboard jack lee Blimey draught. Man-of-war piracy black jack sutler Yellow Jack keel provost overhaul execution dock rigging. Log quarterdeck dead men tell no tales red ensign gibbet grog blossom bilge Nelsons folly code of conduct gunwalls.
       </p>
+
+    {% for blog in blog.blogs %}
+    <div class="blog-entry">
+        <h4>
+          <a href="../blog/{{ blog.slug }}.html" class="blog-title">{{ blog.headline }}</a>
+          </h4>
+        <p class="blog-date"> {{ blog.date }}</p>
+    </div>
+    {% endfor %}
 
     </div>
   </div>
