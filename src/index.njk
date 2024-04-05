@@ -15,8 +15,8 @@
     <div class="blog-entry">
      {% for blog in blog.blogs %}
         <h4>
-          <a href="/blog/{{ blog.slug }}.html" class="blog-title">{{ blog.headline }}</a>
-        </h4>
+          <a href="blog/{{ blog.slug }}.html" class="blog-title">{{ blog.headline }}</a>
+          </h4>
         <p class="blog-date"> {{ blog.date }}</p>
      {% endfor %}
     </div>
